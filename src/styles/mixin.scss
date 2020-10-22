@@ -1,0 +1,149 @@
+@import "./themes.scss";
+@import "./variables.scss";
+
+@mixin triangle($width, $height, $color, $direction) {
+  $width: $width/2;
+  $color-border-style: $height solid $color;
+  $transparent-border-style: $width solid transparent;
+  height: 0;
+  width: 0;
+
+  @if $direction==up {
+    border-bottom: $color-border-style;
+    border-left: $transparent-border-style;
+    border-right: $transparent-border-style;
+  }
+
+  @else if $direction==right {
+    border-left: $color-border-style;
+    border-top: $transparent-border-style;
+    border-bottom: $transparent-border-style;
+  }
+
+  @else if $direction==down {
+    border-top: $color-border-style;
+    border-left: $transparent-border-style;
+    border-right: $transparent-border-style;
+  }
+
+  @else if $direction==left {
+    border-right: $color-border-style;
+    border-top: $transparent-border-style;
+    border-bottom: $transparent-border-style;
+  }
+}
+
+@mixin display($hor: normal, $ver: center) {
+  display: flex;
+  justify-content: $hor;
+  align-items: $ver;
+  @content;
+}
+
+@mixin themify($themes: $themes) {
+
+  @each $theme-type,
+  $maps in $themes {
+    .theme-#{$theme-type} & {
+      $themes-map: () !global;
+
+      @each $key,
+      $value in $maps {
+        $themes-map: map-merge($themes-map,
+            ($key: $value)) !global;
+      }
+
+      @content;
+      $themes-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($themes-map, $key);
+}
+
+@mixin scroll-bar() {
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      visibility: visible;
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    // border-radius:2px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #e2e2e2;
+    border-radius: 10px;
+    transition: all .3s;
+    visibility: hidden;
+  }
+}
+
+@mixin buttonColor($type: "c") {
+  & {
+    height: 40px;
+    border: none;
+    padding: 8px 35px;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    margin: 0 10px;
+    @content;
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    @if $type=="c" {
+      @include themify() {
+        background-color: themed("deputy-button");
+      }
+    }
+
+    @else {
+      @include themify() {
+        background: themed("green-button");
+      }
+    }
+  }
+}
+
+@mixin layout() {
+  overflow: auto;
+  height: 100%;
+  background-color: #fafefd;
+  padding: 20px 0;
+  padding-right: 20px;
+  @include scroll-bar;
+}
+
+@mixin colorFont {
+  transition: all 0.3s;
+  cursor: pointer;
+
+  @include themify() {
+    color: themed("title-active");
+  }
+
+  &:hover {
+    opacity: 0.4;
+  }
+}
+
+@mixin unitBlockHover {
+  transition: all 0.5s;
+  &:hover {
+    box-shadow: 1px 1px 9px 1px rgb(172, 172, 172);
+
+  }
+}

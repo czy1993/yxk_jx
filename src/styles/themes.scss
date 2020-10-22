@@ -1,0 +1,95 @@
+$themes: (green: ( //登录按钮颜色
+    login-btn: #ff9b55,
+    //登录背景图
+    login-bg: "../../assets/dl_logo.png",
+    //头部背景色
+    header-bg: #00af78,
+    //侧边栏激活颜色
+    nav-active: rgba(69, 217, 165, 1),
+    //侧边栏下拉菜单颜色
+    sub-bgcolor: rgba(233, 233, 233, 0.438),
+    //金钱颜色
+    money-color: #e37325,
+    //导航标题激活色
+    title-active: #45d9a6,
+    //侧边栏背景色
+    sider-bgcolor: #fff,
+    //侧边栏字体色
+    sider-fontcolor: #424242,
+    //侧边栏阴影颜色
+    sider-boxshadow: #d9e8e3,
+    //侧边栏hover颜色
+    sider-hover: rgba(69, 217, 165, 0.1),
+    //表格头部颜色
+    table-header: #d6f7e2,
+    //边框颜色(input,button)
+    border-color: #bfcec9,
+    //表格奇数行背景色
+    table-odd-row: #f5fbf9,
+    //表格偶数行背景色
+    table-even-row: #fcfefd,
+    //登录页tab选中颜色
+    login-tab-color: rgb(22, 200, 153),
+    //laout背景se
+    laout-bgcolor: #f1faf7,
+    //新增课程背景色
+    add-course-bgcolor: #fafffb,
+    //上传图片
+    upload-image: "../../../static/img/course/upload.png",
+    //上传图片 激活
+    upload-image-active: "../../../static/img/course/upload_active.png",
+    //绿色按钮颜色
+    green-button: #00ae78,
+    //副色按钮
+    deputy-button: #ff9b57,
+    //详情颜色
+    detail-color: #ff0000,
+    //退款字色
+    refund-color: #0f80ff),
+  black: ( //登录按钮颜色
+    login-btn: #91bf4b,
+    //登录背景图
+    login-bg: "../../assets/dl_logo_black.png",
+    //头部背景色
+    header-bg: #1e2a36,
+    //侧边栏激活颜色
+    nav-active: #0f1921,
+    sub-bgcolor: rgba(24, 24, 24, 0.6),
+    //金钱颜色
+    money-color: #91bf4b,
+    //导航标题激活色
+    title-active: #91bf4b,
+    //侧边栏背景色
+    sider-bgcolor: #1e2a36,
+    //侧边栏字体色
+    sider-fontcolor: #ffffff,
+    //侧边栏阴影颜色
+    sider-boxshadow: #d9e8e3,
+    //侧边栏hover颜色
+    sider-hover: rgba(69, 217, 165, 0.1),
+    //表格头部颜色
+    table-header: #f1eff2,
+    //边框颜色(input,button)
+    border-color: #bfcec9,
+    //表格奇数行背景色
+    table-odd-row: #fafafa,
+    //表格偶数行背景色
+    table-even-row: #ffffff,
+    //登录页tab选中颜色
+    login-tab-color: #91bf4b,
+    //laout背景se
+    laout-bgcolor: #f4f6f6,
+    //新增课程背景色
+    add-course-bgcolor: #fafffb,
+    //上传图片
+    upload-image: "../../../static/img/course/upload_black.png",
+    //上传图片 激活
+    upload-image-active: "../../../static/img/course/upload_active.png",
+    //绿色按钮颜色
+    green-button: #91bf4b,
+    //副色按钮
+    deputy-button: #155c49,
+    //详情颜色
+    detail-color: #ff0000,
+    //退款字色
+    refund-color: #93be4b));

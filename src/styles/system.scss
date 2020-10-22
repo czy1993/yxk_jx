@@ -1,0 +1,181 @@
+// 系统管理
+@import "@/styles/mixin.scss";
+@import "@/styles/variables.scss";
+
+.system_component {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background: #fafefd;
+    padding-top: 58px;
+
+    .system_view {
+        width: 1100px;
+        min-height: 70%;
+        margin: 0 auto;
+        box-sizing: border-box;
+        border: 1px solid #e8eae9;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-sizing: border-box;
+        padding: 60px 0 60px 0;
+
+        // margin-left: -50px;
+        position: relative;
+        h4{
+            font-size: 20px;
+            color: #1b1d1c;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .views {
+            display: flex;
+            justify-content: center;
+            min-height: 80px;
+            width: 380px;
+            align-items: center;
+            position: relative;
+            margin: 0 auto;
+
+            // background: #ccc;
+            .names {
+                width: 70px;
+                text-align: justify;
+                text-align-last: justify;
+                box-sizing: border-box;
+                margin-right: 15px;
+            }
+
+            .texts {
+                // height: 32px;
+                width: 290px;
+                box-sizing: border-box;
+            }
+
+            input {
+                // padding-left: 10px;
+            }
+
+            .tips {
+                position: absolute;
+                top: 60px;
+                right: 0;
+                font-size: 12px;
+                color: #868686;
+            }
+        }
+
+        div:nth-child(4) {
+            margin-bottom: 30px;
+        }
+
+        .buts {
+            width: 150px;
+            height: 36px;
+            margin: 0 auto;
+
+            @include themify() {
+                background-color: themed("deputy-button");
+            }
+
+            text-align: center;
+            line-height: 36px;
+            color: #fff;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .buts:hover {
+            opacity: 0.9;
+        }
+    }
+}
+
+// 主视图
+.education_views {
+    overflow: hidden;
+    height: 100%;
+    background-color: #fafefd;
+    padding: 20px 0;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+
+    .education_header {
+        display: flex;
+        align-items: center;
+        padding-left: 30px;
+        margin-bottom: 20px;
+
+        .header-buts {
+            margin: 0 20px;
+        }
+    }
+
+    .education_centont {
+        flex: 1;
+        box-sizing: border-box;
+        padding-bottom: 50px;
+        overflow: auto;
+        @include scroll-bar;
+    }
+}
+
+// 营销管理设置
+.marketing-set {
+    padding-top: 20px;
+    height: 100%;
+    position: relative;
+
+    .marketingSet-content {
+        width: 1000px;
+        min-height: 480px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        border: 1px solid #e8eae9;
+        padding-bottom: 40px;
+
+        h4 {
+            width: 100px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .marketingSet-form {
+            margin: 0 auto;
+            min-height: 300px;
+            margin-bottom: 50px;
+        }
+
+        .buts {
+            width: 150px;
+            height: 32px;
+            margin: 0 auto;
+
+            @include themify() {
+                background-color: themed("deputy-button");
+            }
+
+            text-align: center;
+            line-height: 32px;
+            border-radius: 2px;
+            color: #fff;
+            cursor: pointer;
+        }
+    }
+}
+
+// input type=number 不显示上下箭头
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
